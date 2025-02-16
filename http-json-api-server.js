@@ -22,12 +22,12 @@ var server = http.createServer(function(req, res) {
     
     var urlObj = url.parse(req.url, true);
     
-    var route = urlObj.pathname;
+    var fileRoute = urlObj.pathname;
     var date = new Date(urlObj.query.iso);
     
-    if (route == '/api/parsetime') {
+    if (fileRoute == '/api/parsetime') {
         var data = formatDate(date);
-    } else if(route == '/api/unixtime') {
+    } else if(fileRoute == '/api/unixtime') {
         var data = formateUnix(date);
     }
     

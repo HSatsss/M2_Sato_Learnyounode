@@ -4,9 +4,9 @@ var bl = require('bl');
 
 var url = process.argv[2];
 
-http.get(url, function (response) {
+http.get(url, function (res) {
     
-    response.pipe(bl(function(err, data) {
+    res.pipe(bl(function(err, data) {
         if (err) {
             return console.error(err);
         }
